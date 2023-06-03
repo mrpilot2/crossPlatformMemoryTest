@@ -15,7 +15,7 @@ std::optional<unsigned long long> MemoryInfo::getAvailableRAMInBytes() {
         if(token == "MemTotal:") {
             unsigned long mem;
             if(file >> mem) {
-                return mem;
+                return mem * 1024;
             } else {
                 return std::nullopt;
             }
