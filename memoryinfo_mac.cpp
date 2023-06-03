@@ -2,6 +2,8 @@
 
 #include "memoryinfo.hpp"
 
+#include <sys/sysctl.h>
+
 #include <iostream>
 
 std::optional<unsigned long long> MemoryInfo::getAvailableRAMInBytes() {
