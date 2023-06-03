@@ -8,7 +8,7 @@ ADD_EXECUTABLE(crossPlatformMemoryTest main.cpp)
 
 IF(WIN32)
     TARGET_SOURCES(crossPlatformMemoryTest PRIVATE memoryinfo_win.cpp)
-ELSEIF (UNIX)
+ELSEIF (UNIX AND NOT APPLE)
     TARGET_SOURCES(crossPlatformMemoryTest PRIVATE memoryinfo_lin.cpp)
 ELSE ()
     TARGET_SOURCES(crossPlatformMemoryTest PRIVATE memoryinfo_mac.cpp)
